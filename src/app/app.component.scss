@@ -1,0 +1,65 @@
+.box {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+.products--grid {
+  display: flex;
+  flex-direction: column;
+  div {
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    h2, p {
+      margin: 0;
+    }
+  }
+}
+
+.message-error {
+  background: red;
+  color: white;
+  opacity: 0;
+  transition: all linear .5s;
+  &.error {
+    opacity: 1;
+    font-style: italic;
+  }
+  &.check {
+    opacity: 1;
+    background: green;
+  }
+}
+
+.line-error {
+  height: 0;
+  border-bottom: 10px solid;
+  &.invalid {
+    border-color: red;
+  }
+  &.valid {
+    border-color: green;
+  }
+}
+
+.message-error {
+  background: red;
+  color: white;
+  opacity: 0;
+  transition: all linear .5s;
+  &.error {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .products--grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px;
+  }
+}
